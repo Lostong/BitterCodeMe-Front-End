@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadfish Task</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1f1f1f;
+        color: #dcdcdc;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .tabs {
+        display: flex;
+        background-color: #333;
+        border-bottom: 1px solid #444;
+      }
+
+      .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        color: #bbb;
+        font-weight: bold;
+      }
+
+      .tab.active {
+        color: #fff;
+        border-bottom: 2px solid #007acc;
+      }
+
+      .content {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      .sidebar {
+        width: 30%;
+        background-color: #252526;
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid #444;
+        overflow-y: auto;
+      }
+
+      .sidebar h2 {
+        color: #d4d4d4;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .sidebar p {
+        margin-bottom: 20px;
+      }
+
+      .sidebar pre {
+        background-color: #1e1e1e;
+        color: #9cdcfe;
+        padding: 10px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-family: Consolas, monospace;
+      }
+
+      .main {
+        flex-grow: 1;
+        padding: 20px;
+        background-color: #1e1e1e;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main textarea {
+        flex-grow: 1;
+        background-color: #252526;
+        color: #d4d4d4;
+        border: 1px solid #444;
+        padding: 10px;
+        font-family: Consolas, monospace;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+
+      .main .button-container {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .main .btn {
+        background-color: #007acc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .main .btn:hover {
+        background-color: #005f99;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <div class="tab active">Instructions</div>
+        <div class="tab">Output</div>
+      </div>
+
+      <div class="content">
+        <div class="sidebar">
+          <h2>Create a parser</h2>
+          <p>
+            Deadfish operates on a single value in memory, which is initially set
+            to 0.
+          </p>
+          <p>It uses four single-character commands:</p>
+          <pre>
+i: Increment the value
+d: Decrement the value
+s: Square the value
+o: Output the value to a result array</pre>
+          <p>
+            All other instructions are no-ops and have no effect.
+          </p>
+          <h2>Examples</h2>
+          <pre>
+Program "iiisdoso" should return numbers [8, 64].
+Program "iiisdsodddddiso" should return numbers [8, 64, 3600].
+          </pre>
+        </div>
+
+        <div class="main">
+          <textarea placeholder="Write your solution here..."></textarea>
+          <div class="button-container">
+            <button class="btn">Run Tests</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

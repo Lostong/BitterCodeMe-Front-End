@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ task.title }}</title>
+    <style>
+      body {
+        font-family: Consolas, monospace;
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .header {
+        background-color: #252526;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #3c3c3c;
+      }
+
+      .header span {
+        color: #569cd6;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .container {
+        display: flex;
+        height: 100%;
+      }
+
+      .sidebar {
+        width: 30%;
+        background-color: #252526;
+        border-right: 1px solid #3c3c3c;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+
+      .sidebar h2 {
+        color: #569cd6;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .sidebar pre {
+        background-color: #1e1e1e;
+        color: #dcdcaa;
+        padding: 10px;
+        border: 1px solid #3c3c3c;
+        border-radius: 5px;
+        overflow-x: auto;
+        max-height: 150px;
+        margin-bottom: 15px;
+      }
+
+      .main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+
+      .code-editor {
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        font-family: Consolas, monospace;
+        font-size: 14px;
+        border: 1px solid #3c3c3c;
+        border-radius: 5px;
+        flex-grow: 1;
+        margin-bottom: 15px;
+        padding: 10px;
+        overflow: auto;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .btn {
+        background-color: #0e639c;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .btn:hover {
+        background-color: #1177bb;
+      }
+
+      .footer {
+        background-color: #252526;
+        padding: 10px 20px;
+        border-top: 1px solid #3c3c3c;
+        text-align: right;
+        color: #d4d4d4;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <span>Task: {{ task.title }}</span>
+    </div>
+
+    <div class="container">
+      <div class="sidebar">
+        <h2>Instructions</h2>
+        <p>{{ task.description }}</p>
+        <h2>Examples</h2>
+        <pre>{{ task.unit_tests }}</pre>
+      </div>
+
+      <div class="main">
+        <textarea
+          id="solution"
+          name="solution"
+          class="code-editor"
+          placeholder="Write your solution here..."
+        ></textarea>
+        <div class="button-container">
+          <button type="submit" class="btn">Run Tests</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2024 Codewars-like Interface
+    </div>
+  </body>
+</html>

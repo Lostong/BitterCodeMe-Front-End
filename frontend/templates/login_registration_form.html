@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="reg_log">
+        {% if action == '/register' %}
+
+            {% for message in get_flashed_messages() %}
+            <div class='error'>
+                {{message}}
+            </div>
+            {% endfor %}
+
+            <h1>Registration</h1>
+
+            <form action='{{action}}' method='post'>
+                {{form.hidden_tag()}}
+                <p>{{form.name(placeholder=form.name.label.text)}}</p>
+                
+                <p>{{form.email(placeholder=form.email.label.text)}}</p>
+        
+                <p>{{form.password(placeholder=form.password.label.text)}}</p>
+        
+                {% if form.confirm.errors %}
+                    <p>{{form.confirm(placeholder='Passwords must match!')}}<p>
+                {% else %}
+                    <p>{{form.confirm(placeholder=form.confirm.label.text)}}</p>
+                {% endif %}
+                 
+                <p>{{form.role.label()}} {{form.role()}}</p>
+
+                <p>{{form.submit()}}</p>
+            </form>
+        
+        {% elif action == '/login' %}
+
+        {% for message in get_flashed_messages() %}
+        <div class='error'>
+            {{message}}
+        </div>
+        {% endfor %}
+        
+            <h1>Log in</h1>
+            <form action='{{action}}' method='post'>
+                {{form_login.hidden_tag()}}
+                <p>{{form_login.email(placeholder=form_login.email.label.text)}}</p>
+        
+                <p>{{form_login.password(placeholder=form_login.password.label.text)}}</p>
+        
+                <p>{{form_login.submit()}}</p>
+            </form>
+        {% endif %}
+        <p class="url"><a href='/register'>Registration</a> / <a href='/login'>Log in</a></p>
+    </div>
+</body>
+</html>

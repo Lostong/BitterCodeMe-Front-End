@@ -1,0 +1,145 @@
+.reg_log {
+    margin: auto;
+    width: 400px;
+    padding: 20px;
+    background-color: rgb(33, 33, 33);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px auto;
+    display: block;
+}
+
+body{
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.reg_log form{
+    background-color: rgb(33, 33, 33);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    font-family: Marker Felt, fantasy;
+    letter-spacing: 1px;
+    border-radius: 10px; 
+}
+
+.reg_log form input[type="submit"]{
+    background-color: #73B64F;
+    font-family: Marker Felt, fantasy;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 75px;
+    letter-spacing: 1px;
+    font-size: 30px;
+    transition: 0.3s;
+    margin: 10px auto;
+    display: block;
+    font-weight: 100;
+}
+
+.reg_log form input[type="submit"]:hover{
+    background-color: #477031;
+    color: rgb(183, 183, 183);
+}
+
+.reg_log form input[type="email"],
+.reg_log form input[type="password"],
+.reg_log form input[type="confirm"],
+.reg_log form input[type="text"]{
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px auto;
+    display: block;
+    font-weight: 100;
+    text-indent: 10px;
+}
+
+.reg_log form select[name="role"]{
+    border-radius: 5px;
+    font-family: Marker Felt, fantasy;
+    letter-spacing: 1px;
+    color: rgb(110, 110, 110);
+    transition: 0.3s;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    text-indent: 10px;
+}
+
+.reg_log form select[name="role"]:hover{
+    color: white;
+    background-color: #73B64F;
+}
+
+
+.reg_log p{
+    text-align: center;
+}
+
+.reg_log a{
+    text-decoration: none;
+    color: white;
+    font-family: Marker Felt, fantasy;
+    border: none;
+    letter-spacing: 1px;
+    width: 50px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    font-weight: 100;
+}
+
+.reg_log form input::placeholder {
+    color: #616161;
+    opacity: 0.6;
+    font-family: Marker Felt, fantasy;
+    font-weight: 100;
+}
+
+.reg_log h1{
+    font-family: Marker Felt, fantasy;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 35px;
+    margin: -10px;
+    font-weight: 100;
+
+}
+
+.url{
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 0;
+    transition: 0.3s;
+}
+
+.url a:hover{
+    color: #73B64F;
+}
+
+.error {
+    background-color: rgb(255, 108, 108);
+    height: 50px;
+    width: 200px;
+    margin: 20px;
+    font-size: 25px;
+    font-family: Marker Felt, fantasy;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    max-width: 400px; 
+    margin-top: -10px;
+    padding-top: 20px;
+}

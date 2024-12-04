@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Інформація про користувача{% endblock %}
+
+{% block content %}
+    <h1>Інформація про користувача</h1>
+    <p>Ім'я: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Адреса: {{ user.address }}</p>
+    <p>Телефон: {{ user.phone }}</p>
+{% endblock %}

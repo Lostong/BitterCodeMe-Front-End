@@ -1,0 +1,20 @@
+{% block content %}
+<div class="row">
+    <div class="col-md-6 left-panel">
+        <h2>{{ task_title }}</h2>
+        <p><strong>Опис завдання:</strong> {{ task_description }}</p>
+
+        <form id="taskForm" method="POST" action="{{ url_for('execute_task', task_id=task_id) }}">
+            <div class="form-group">
+                <label for="userCode">Ваш код:</label>
+                <textarea id="userCode" name="userCode" class="form-control" rows="10" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Виконати код</button>
+        </form>
+    </div>
+    <div class="col-md-6 right-panel">
+        <h4>Юніт-тести:</h4>
+        <pre>{{ unit_tests }}</pre>
+    </div>
+</div>
+{% endblock %}
